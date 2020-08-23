@@ -1,0 +1,37 @@
+﻿@model NGPS.Models.Course
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Course</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.course_code)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.course_code)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.course_name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.course_name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Class)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Class.class_name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

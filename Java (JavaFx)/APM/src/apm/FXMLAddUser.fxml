@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="533.0" prefWidth="697.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apm.FXMLAddUserController">
+    <stylesheets>
+        <URL value="@fxmladduser.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="35.0" layoutY="105.0" text="Name" />
+      <TextField fx:id="name11" layoutX="153.0" layoutY="101.0" />
+      <TextField fx:id="username111" layoutX="153.0" layoutY="147.0" />
+      <Label layoutX="35.0" layoutY="151.0" text="User Name" />
+      <TextField fx:id="password" layoutX="153.0" layoutY="194.0" />
+      <Label layoutX="36.0" layoutY="291.0" text="Email" />
+      <TextField fx:id="email" layoutX="152.0" layoutY="287.0" />
+      <Label layoutX="35.0" layoutY="198.0" text="Password" />
+      <TextField fx:id="phone111" layoutX="152.0" layoutY="239.0" />
+      <Label layoutX="35.0" layoutY="243.0" text="Phone" />
+      <TextField fx:id="address" layoutX="153.0" layoutY="330.0" />
+      <Label layoutX="32.0" layoutY="334.0" text="Address" />
+      <Button fx:id="back" layoutX="193.0" layoutY="378.0" mnemonicParsing="false" onAction="#backAction" text="Back" />
+      <Button fx:id="saveuser" layoutX="261.0" layoutY="378.0" mnemonicParsing="false" onAction="#saveuserAction" text="Save" />
+      <TableView fx:id="table" layoutX="370.0" layoutY="61.0" prefHeight="381.0" prefWidth="298.0">
+        <columns>
+          <TableColumn fx:id="namcCol" prefWidth="105.0" text="Name" />
+          <TableColumn fx:id="usernameCol" prefWidth="94.0" text="User Name" />
+            <TableColumn fx:id="phoneCol" prefWidth="98.0" text="Phone" />
+        </columns>
+      </TableView>
+      <Button fx:id="btndel" layoutX="484.0" layoutY="454.0" mnemonicParsing="false" onAction="#btndelaction" text="Delete" />
+      <Label fx:id="success" layoutX="37.0" layoutY="432.0" textFill="#00cd44" />
+      <Label fx:id="faild" layoutX="33.0" layoutY="30.0" textFill="#ff0037" />
+   </children>
+</AnchorPane>

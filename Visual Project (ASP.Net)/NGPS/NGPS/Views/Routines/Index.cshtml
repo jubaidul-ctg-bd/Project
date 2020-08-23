@@ -1,0 +1,87 @@
+﻿@using Microsoft.AspNetCore.Http;
+
+@model IEnumerable<NGPS.Models.Routine>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Class Routine</h2>
+@if (Context.Session.GetString("type") == "Admin")
+{ 
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Class Time
+            </th>
+            @if (Context.Session.GetString("type") != "Student")
+            {
+                <th>
+                    @Html.DisplayNameFor(model => model.Class) 
+                </th>
+            }
+            <th>
+                @Html.DisplayNameFor(model => model.Course)
+            </th>
+            @if (Context.Session.GetString("type") != "Teacher")
+            {
+                <th>
+                    @Html.DisplayNameFor(model => model.Teacher)
+                </th>
+            }
+            @if (Context.Session.GetString("type") == "Admin")
+            {
+                <th>
+                    @Html.DisplayNameFor(model => model.Year)
+                </th>
+            }
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.class_time)
+            </td>
+            @if (Context.Session.GetString("type") != "Student")
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Class.class_name)
+                </td>
+            }
+            <td>
+                @Html.DisplayFor(modelItem => item.Course.course_code)
+            </td>
+            @if (Context.Session.GetString("type") != "Teacher")
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Teacher.name)
+                </td>
+            }
+            @if (Context.Session.GetString("type") == "Admin")
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year.year_title)
+                </td>
+            }
+            <td>
+                @if (Context.Session.GetString("type") == "Admin")
+                {<a asp-action="Edit" asp-route-id="@item.id">Edit |</a>}
+
+                <a asp-action="Details" asp-route-id="@item.id">Details</a>
+                @if (Context.Session.GetString("type") == "Admin")
+                {<a asp-action="Delete" asp-route-id="@item.id"> | Delete</a>}
+
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="474.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apm.WorksAddController">
+   <children>
+      <ChoiceBox fx:id="employee" layoutX="300.0" layoutY="47.0" prefWidth="150.0" />
+      <TextField fx:id="place" layoutX="301.0" layoutY="92.0" />
+      <TextField fx:id="date" layoutX="301.0" layoutY="136.0" />
+      <TextField fx:id="time" layoutX="301.0" layoutY="183.0" />
+      <TextArea fx:id="works" layoutX="188.0" layoutY="224.0" opacity="0.62" prefHeight="126.0" prefWidth="262.0" text="Works Description...." />
+      <Label layoutX="187.0" layoutY="51.0" text="Employee" />
+      <Label layoutX="187.0" layoutY="96.0" text="Place" />
+      <Label layoutX="187.0" layoutY="140.0" text="Date" />
+      <Label layoutX="187.0" layoutY="187.0" text="Time" />
+      <Button fx:id="saveWorks" layoutX="409.0" layoutY="369.0" mnemonicParsing="false" onAction="#saveWorksAction" text="Save" />
+      <Button fx:id="backHome" layoutX="355.0" layoutY="369.0" mnemonicParsing="false" onAction="#backHomeAction" text="Back" />
+      <Label fx:id="success" layoutX="187.0" layoutY="410.0" textFill="#27c304" />
+   </children>
+</AnchorPane>
